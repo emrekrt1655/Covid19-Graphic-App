@@ -8,8 +8,9 @@ import logo from'./virus.svg'
     <React.Fragment>
     <CssBaseline />
     <Container maxWidth="lg">
-      <Grid container>
-       
+      <Grid container >
+        <img src = {logo} alt='Covid19' style={{
+          width:100, height:100, marginTop:20 }} />
       </Grid>
     
     </Container>
