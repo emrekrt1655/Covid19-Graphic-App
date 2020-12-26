@@ -38,11 +38,9 @@ const useStyles = makeStyles({
   }, [])
 
   const countryNames = countries?.map((item)=>{
-    return { label: item.Country };
+    return { label: item.Country, slug: item.Slug };
   })
-  const countryValues = countries?.map((item)=>{
-    return  item.Slug ;
-  })
+
 
   return (
     <React.Fragment>
@@ -54,10 +52,10 @@ const useStyles = makeStyles({
         
         <Autocomplete
       id="country-select-demo"
-      style={{ width: 300 }}
+      style={{ width: '50%', margin: '50px auto' }}
       value={null}
       onChange={(event, value) => {
-        setCountry(value.label)
+        console.log(value.slug)
       }}
       options={countryNames}
       classes={{
@@ -77,7 +75,7 @@ const useStyles = makeStyles({
           variant="outlined"
           inputProps={{
             ...params.inputProps,
-            autoComplete: 'new-password'
+           
           }}
           
         />
@@ -87,7 +85,9 @@ const useStyles = makeStyles({
 
 
       </Grid>
-   
+      <Grid item xs={12} >
+        <AreaChart country={country}/>
+      </Grid>
     
     </Container>
   </React.Fragment>
